@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div style="text-align: center; height: 75px; padding:1px;   text-transform:capitalize; background-color:#42a5f5; color:white">
+     <h1 style="margin-bottom:-10px; "><a style="text-decoration: none; color:white;"href="/">Single Template - page</a></h1>
+</div>
+
+    <div style="margin: 25px">
+      <h1>B</h1>
+
+      <div style="color: grey; font-size: 16px">
+        Monday, Mar 6, 2023
+      </div>
+      <div style="color: grey; font-size: 16px">
+        
+      </div>
+      <div style="font-size: 18px"><p>this is mdadsfasdfadsfasdfasdf</p>
+</div>
+    </div>
+    <div style="height:35px;"></div>
+<div style=" position:fixed; color: white; height:35px; background-color:#757575; bottom:0px; text-align:center; width:99%">
+     <p style="margin:10px; "><a style="color: white; " target="_blank" href="http://www.giraffeacademy.com/">Giraffe Academy</a> - Hugo Theme</p>
+</div>
+
+
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      
+      axios
+        .get("https://jsonplaceholder.typicode.com/users")
+        .then(function (response) {
+          var users = response.data;
+          var tableBody = document.querySelector("#myTable tbody");
+          users.forEach(function (user) {
+            var row = document.createElement("tr");
+            var nameCell = document.createElement("td");
+            var emailCell = document.createElement("td");
+            nameCell.textContent = user.name;
+            emailCell.textContent = user.email;
+            row.appendChild(nameCell);
+            row.appendChild(emailCell);
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

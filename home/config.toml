@@ -1,0 +1,4 @@
+baseURL = 'https://student.cloud.htl-leonding.ac.at/m.witak'
+languageCode = 'de-at'
+title = 'My schöne Mobilecompinting Übung'
+theme = "ga-hugo-theme"
